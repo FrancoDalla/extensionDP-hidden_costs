@@ -1,6 +1,6 @@
 console.log("HOLA ESTO ESTA ANDANDO :)");
 const spans = document.getElementsByTagName("span");
-let hiddenSpans = [];
+const hiddenPrecios = [];
 const precios= [];
 
 for(let i=0;i<spans.length;i++)
@@ -10,10 +10,11 @@ for(let i=0;i<spans.length;i++)
     if(actualSpan.textContent.includes('$'))
     {
 
-        if(actualSpan.style.visibility.valueOf === 'hidden')
+        if(!actualSpan.checkVisibility())
         {
-            hiddenSpans.push(actualSpan);
+            hiddenPrecios.push(actualSpan);
             actualSpan.style.backgroundColor = 'green';
+            console.log("SE ENTRO");
         }
         else
         {
@@ -24,16 +25,15 @@ for(let i=0;i<spans.length;i++)
     }
 }
 
-console.log("Spans ocultos:_ ",hiddenSpans);
+console.log("Spans ocultos:_ ",hiddenPrecios);
 console.log("spans", precios);
 
-for(let i = 0;i<hiddenSpans.length;i++){
-    console.log(hiddenSpans[i].textContent);
-    console.log(hiddenSpans[i].style.visibility.valueOf);
+for(let i = 0;i<hiddenPrecios.length;i++){
+    console.log(hiddenPrecios[i].textContent);
 }
-
+console.log("AHORA PRECIOS");
 for(let i = 0;i<precios.length;i++){
     console.log(precios[i].textContent);
-    console.log(precios[i].style.getPropertyValue);
 }
+
 
