@@ -14,7 +14,6 @@ for(let i=0;i<spans.length;i++)
         {
             hiddenPrecios.push(actualSpan);
             actualSpan.style.backgroundColor = 'green';
-            console.log("SE ENTRO");
         }
         else
         {
@@ -25,15 +24,5 @@ for(let i=0;i<spans.length;i++)
     }
 }
 
-console.log("Spans ocultos:_ ",hiddenPrecios);
-console.log("spans", precios);
-
-for(let i = 0;i<hiddenPrecios.length;i++){
-    console.log(hiddenPrecios[i].textContent);
-}
-console.log("AHORA PRECIOS");
-for(let i = 0;i<precios.length;i++){
-    console.log(precios[i].textContent);
-}
 
 
