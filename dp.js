@@ -14,7 +14,6 @@ for(let i=0;i<spans.length;i++)
         if(!actualSpan.checkVisibility())
         {
             hiddenPrecios.push(actualSpan);
-            actualSpan.style.backgroundColor = 'green';
         }
         else
         {
@@ -23,6 +22,15 @@ for(let i=0;i<spans.length;i++)
          }
 
     }
+}
+
+console.log("precios visibles:");
+for(let i=0; i<precios.length;i++){
+    console.log(precios[i].textContent);
+}
+console.log("precios ocultos:");
+for(let i=0; i<hiddenPrecios.length;i++){
+    console.log(hiddenPrecios[i].textContent);
 }
 
 
