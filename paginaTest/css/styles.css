@@ -10833,3 +10833,10 @@ textarea.form-control-lg {
 .oculto{
   display:none;
 }
+
+.precioPrincipal{
+  font-size:30px;
+}
+.precioPequeño{
+  font-size:10px;
+}
