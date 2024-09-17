@@ -12,7 +12,6 @@ let potentialPriceSize = -1;
 let potentialPrice;
 console.log("Cargaste el viewPort test");
 const spans = document.getElementsByTagName("span");
-console.log("elemento 7: ",spans[7].textContent);
 for (let i=0;i<spans.length;i++){ //como lo mas probable es que el precio mas grande sea donde quieran que pongamos foco. Nos interesa para poder buscar precios cercanos a este. 
     let actual = spans[i];
     let actualSize = parseFloat(window.getComputedStyle(actual,null).getPropertyValue('font-size'));    
@@ -22,3 +21,4 @@ for (let i=0;i<spans.length;i++){ //como lo mas probable es que el precio mas gr
     }
 }
 console.log(`El tamaño de fuente del precio potencial es de: ${potentialPriceSize}`);
+console.log(`El precio potencial es: ${potentialPrice.textContent}`);
