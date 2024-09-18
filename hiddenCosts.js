@@ -23,9 +23,9 @@ Ademas de eso se busca diferenciar precios de por si mediante el uso de RegExp*/
 
 for(let i=0;i<elementos.length;i++)
 {
-    let actualSpan = elementos[i];
-    let actualSize = parseInt(window.getComputedStyle(actualSpan).fontSize);  
-    if(reNumber.test(actualSpan.textContent))
+    let actualElement = elementos[i];
+    let actualSize = parseInt(window.getComputedStyle(actualElement).fontSize);  
+    if(reNumber.test(actualElement.textContent))
     {
         if(actualSize >= biggestPriceSize)
         {
@@ -34,16 +34,16 @@ for(let i=0;i<elementos.length;i++)
                 biggestPriceSize = actualSize;
                 prices = prices.concat(principalPrices);
                 principalPrices = [];
-                principalPrices.push(actualSpan);
+                principalPrices.push(actualElement);
             }
             else
             {
-                principalPrices.push(actualSpan);
+                principalPrices.push(actualElement);
             }
         }
         else
         {
-            prices.push(actualSpan);
+            prices.push(actualElement);
         }
     }
 }
