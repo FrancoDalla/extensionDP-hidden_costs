@@ -10,7 +10,7 @@ function getDistance (element,anotherElement) {
 }
 
 console.log("HOLA ESTO ESTA ANDANDO :)");
-const elementos = document.getElementsByTagName("span"); //Esto es temporal porque podrían aparecer precios con varios tipos de tags HTML. Estamos viendo como incluir distintos tags
+const elementos = document.querySelectorAll('p,span,h5'); //Esto es temporal porque podrían aparecer precios con varios tipos de tags HTML. Estamos viendo como incluir distintos tags
 let hiddenCosts = [];
 let prices = [];
 const reNumber = /[$]\s*\d+/;
@@ -18,7 +18,6 @@ const hiddenCostSize = 5;
 let principalPrices = [];
 let biggestPriceSize = -1;
 const hiddenCostDistance = 40; //El minimo se basa en la pagina de ejemplo pero de momento no pensamos que considerar para este valor.
-
 /*Se busca diferenciar precios por el mayor tamaño porque, suponemos, que es mas probable que sean precios finales debido a que llaman más la atención
 Ademas de eso se busca diferenciar precios de por si mediante el uso de RegExp*/
 
@@ -73,10 +72,14 @@ for(let i=0; i<prices.length;i++){
 console.log("precios ocultos: ");
 for(let i=0; i<hiddenCosts.length;i++){
     console.log(hiddenCosts[i].textContent);
+    hiddenCosts[i].setAttribute("style","background-color: #FFCCCB;")
 }
 
-console.log(`Tamaño del precio potencial: ${biggestPriceSize}`);
+console.log(`Tamaño de precio potencial: ${biggestPriceSize}`);
+console.log(`Se detectaron ${principalPrices.length} precios potenciales`);
+
 for(let i=0;i<principalPrices.length;i++)
+{
     console.log(principalPrices[i].textContent);
-
-
+    principalPrices[i].setAttribute("style","background-color: #CCFEFF;")
+}
