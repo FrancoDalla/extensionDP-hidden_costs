@@ -10,21 +10,21 @@ function getDistance (element,anotherElement) {
 }
 
 console.log("HOLA ESTO ESTA ANDANDO :)");
-const spans = document.getElementsByTagName("p"); //Esto es temporal porque podrían aparecer precios con varios tipos de tags HTML. Estamos viendo como incluir distintos tags
+const elementos = document.getElementsByTagName("span"); //Esto es temporal porque podrían aparecer precios con varios tipos de tags HTML. Estamos viendo como incluir distintos tags
 let hiddenCosts = [];
 let prices = [];
 const reNumber = /[$]\s*\d+/;
-const defaultFontSize = 5;
+const hiddenCostSize = 5;
 let principalPrices = [];
 let biggestPriceSize = -1;
-const minDistance = 40; //El minimo se basa en la pagina de ejemplo pero de momento no pensamos que considerar para este valor.
+const hiddenCostDistance = 40; //El minimo se basa en la pagina de ejemplo pero de momento no pensamos que considerar para este valor.
 
 /*Se busca diferenciar precios por el mayor tamaño porque, suponemos, que es mas probable que sean precios finales debido a que llaman más la atención
 Ademas de eso se busca diferenciar precios de por si mediante el uso de RegExp*/
 
-for(let i=0;i<spans.length;i++)
+for(let i=0;i<elementos.length;i++)
 {
-    let actualSpan = spans[i];
+    let actualSpan = elementos[i];
     let actualSize = parseInt(window.getComputedStyle(actualSpan).fontSize);  
     if(reNumber.test(actualSpan.textContent))
     {
@@ -56,7 +56,7 @@ for(let i=0;i<prices.length;i++)
     while(j < principalPrices.length)
     {
         let distance = getDistance(prices[i],principalPrices[j]);
-        if(distance < minDistance )
+        if(distance < hiddenCostDistance )
         {
             hiddenCosts.push(prices[i]);
             break;
