@@ -72,6 +72,7 @@ for(let i=0; i<prices.length;i++){
 console.log("precios ocultos: ");
 for(let i=0; i<hiddenCosts.length;i++){
     console.log(hiddenCosts[i].textContent);
+    hiddenCosts[i].setAttribute("style","background-color: #FFCCCB;")
 }
 
 console.log(`Tamaño de precio potencial: ${biggestPriceSize}`);
@@ -80,4 +81,5 @@ console.log(`Se detectaron ${principalPrices.length} precios potenciales`);
 for(let i=0;i<principalPrices.length;i++)
 {
     console.log(principalPrices[i].textContent);
+    principalPrices[i].setAttribute("style","background-color: #CCFEFF;")
 }
